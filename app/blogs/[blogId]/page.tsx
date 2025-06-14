@@ -1,3 +1,5 @@
+export const revalidate = 60;
+
 import PortableTextRenderer from "@/app/components/utils/PortableTextRenderer";
 import { getBlogPostBySlug } from "@/sanity/lib/blogs"; // Update this to your actual fetch function
 import { notFound } from "next/navigation";
