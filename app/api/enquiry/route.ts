@@ -32,7 +32,7 @@ export async function POST(req: NextRequest) {
       },
     });
 
-    const internalEmailHtml=InternalEmailHandler({formData})
+    const internalEmailHtml=InternalEmailHandler({ formType: "Enquiry", formData });
     const internalEmail = {
       from: `"Revolution EV - Enquiry" <${EMAIL_USER}>`,
       to: TO_USER, // Replace as needed

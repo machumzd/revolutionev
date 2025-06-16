@@ -42,7 +42,7 @@ export async function POST(request: Request) {
     }
 
     // Internal notification email
-    const internalEmailHtml = InternalEmailHandler({ formData });
+    const internalEmailHtml = InternalEmailHandler({ formType: "Sponsor", formData });
     const internalMail = {
       from: `"Revolution EV - Sponsor" <${EMAIL_USER}>`,
       to: TO_USER,

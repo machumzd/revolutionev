@@ -32,7 +32,7 @@ export async function sendExhibitorEmail(formData: {
       pass: EMAIL_PASS,
     },
   });
-  const internalEmailHtml = InternalEmailHandler({ formData });
+  const internalEmailHtml = InternalEmailHandler({ formType: "Exhibitor", formData });
   const internalEmail = {
     from: `"Revolution EV - Exhibitor" <${EMAIL_USER}>`,
     to: TO_USER,

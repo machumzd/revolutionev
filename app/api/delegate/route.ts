@@ -53,7 +53,7 @@ export async function POST(req: Request) {
     });
 
     // Email content
-    const internalEmailHtml = InternalEmailHandler({ formData });
+    const internalEmailHtml = InternalEmailHandler({ formType: "Delegate", formData });
     const internalEmail = {
       from: `"Revolution EV - Delegate" <${EMAIL_USER}>`,
       to: TO_USER, // Your destination email

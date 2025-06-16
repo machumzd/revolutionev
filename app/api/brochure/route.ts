@@ -34,7 +34,7 @@ export async function POST(request: Request) {
 
     const { name, email } = formData;
 
-    const internalEmailHtml = InternalEmailHandler({ formData });
+    const internalEmailHtml = InternalEmailHandler({ formType: "Brochure", formData });
 
     // Enhanced professional HTML email template
     const internalEmail = {

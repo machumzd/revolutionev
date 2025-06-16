@@ -33,7 +33,7 @@ export async function POST(request: Request) {
 
     const { name, email, phone, organization, industry, topic, bio } = formData;
 
-    const internalEmailHtml = InternalEmailHandler({formData});
+    const internalEmailHtml = InternalEmailHandler({ formType: "Speaker", formData });
     const internalMail = {
       from: `"Revolution EV - Speaker" <${EMAIL_USER}>`,
       to: TO_USER,
