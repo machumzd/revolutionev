@@ -9,7 +9,7 @@ const highlights = [
         With Leaders In E-Mobility From Around The World.
       </>
     ),
-    image: "/image/About/cars.svg",
+    image: "/image/About/cars.jpg",
     align: "left",
   },
   {
@@ -19,7 +19,7 @@ const highlights = [
         Showcasing The Latest Electric Vehicle Innovations.
       </>
     ),
-    image: "/image/About/people.svg",
+    image: "/image/About/people.jpg",
     align: "right",
   },
   {
@@ -31,7 +31,7 @@ const highlights = [
         With Representatives Of The Government.
       </>
     ),
-    image: "/image/About/audience.svg",
+    image: "/image/About/audience.jpg",
     align: "left",
   },
   {
@@ -42,7 +42,7 @@ const highlights = [
         Real Time
       </>
     ),
-    image: "/image/About/carEV.svg",
+    image: "/image/About/carEv.jpg",
     align: "right",
   },
 ];
