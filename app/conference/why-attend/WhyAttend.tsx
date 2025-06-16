@@ -5,35 +5,35 @@ export default function Component() {
   const features = [
     {
       title: "Thoughtfully Curated Conference Programme",
-      image: "/image/conferrence/Frame 3968622.png?height=200&width=300",
+      image: "/image/conference/Frame 3968622.png?height=200&width=300",
     },
     {
       title: "Learning Opportunities",
-      image: "/image/conferrence/Frame 3968614.png?height=200&width=300",
+      image: "/image/conference/Frame 3968614.png?height=200&width=300",
     },
     {
       title: "Hear from the Best EV Minds",
-      image: "/image/conferrence/Frame 3968616.png?height=200&width=300",
+      image: "/image/conference/Frame 3968616.png?height=200&width=300",
     },
     {
       title: "Share and Collaborate",
-      image: "/image/conferrence/Frame 3968647.png?height=200&width=300",
+      image: "/image/conference/Frame 3968647.png?height=200&width=300",
     },
     {
       title: "Hands On Workshops",
-     image: "/image/conferrence/Frame 3968617.png?height=200&width=300",
+     image: "/image/conference/Frame 3968617.png?height=200&width=300",
     },
     {
       title: "Sponsorship and Partnership Opportunities",
-     image: "/image/conferrence/Frame 3968618.png?height=200&width=300",
+     image: "/image/conference/Frame 3968618.png?height=200&width=300",
     },
     {
       title: "Get Inspired",
-     image: "/image/conferrence/Frame 3968619.png?height=200&width=300",
+     image: "/image/conference/Frame 3968619.png?height=200&width=300",
     },
     {
-      title: "",
-      image: "/image/conferrence/Frame 3968620.png?height=200&width=300",
+      title: "Gain Strategic insights from Global Experts",
+      image: "/image/conference/africanWomen.svg",
     },
   ]
 
@@ -44,7 +44,7 @@ export default function Component() {
   <div className="flex flex-col md:flex-row">
     <div className="md:w-1/3">
       <Image
-        src="/image/conferrence/image.png?height=250&width=350"
+        src="/image/conference/image.png?height=250&width=350"
         alt="Conference attendees"
         width={350}
         height={250}
@@ -93,7 +93,7 @@ export default function Component() {
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent rounded-none" />
       <div className="absolute bottom-0 left-0 right-0 p-4">
-        <h3 className="text-white font-semibold text-lg leading-tight">{feature.title}</h3>
+        <h3 className="text-white font-semibold text-lg leading-tight line-clamp-2">{feature.title}</h3>
       </div>
     </div>
   </Card>

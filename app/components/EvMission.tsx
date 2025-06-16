@@ -16,7 +16,7 @@ const missionData: MissionItem[] = [
     title: "Conference",
     description:
       "The conference at #rev25 brings together leading voices from across the government, industry verticals, academia, and more to help shape the e-mobility landscape within Malaysia and beyond. Participate in thought-provoking discussions on the infrastructure, innovation, investment, and policy that will propel the country's electric future.",
-    image: "/image/conference.jpg",
+    image: "/image/evMission/discussion.jpg",
     buttonText: "Get Delegate Pass",
     buttonLink: "/register?t=delegate",
     imagePosition: "left",
@@ -25,7 +25,7 @@ const missionData: MissionItem[] = [
     title: "Exhibition",
     description:
       "Malaysia's most prestigious e-mobility event, #rev25, serves as your entry point to South-East Asia's rapidly expanding electric vehicle industry, offering invaluable opportunities whether you're introducing a product, expanding your business, or boosting brand awareness.",
-    image: "/image/exhibition.jpg",
+    image: "/image/evMission/showRoom.jpg",
     buttonText: "Book Your Stand",
     buttonLink: "/register?t=exhibitor",
     imagePosition: "right",
@@ -34,7 +34,7 @@ const missionData: MissionItem[] = [
     title: "Networking",
     description:
       "Connect directly with top EV leaders, tech innovators, and investors during Malaysia's e-mobility transformation. Build strong business relationships, share ideas for the future, and open doors to strategic alliances. Expand your impact within the rapidly expanding EV industry to hasten your success.",
-    image: "/image/networking.jpg",
+    image: "/image/evMission/shakeHand.jpg",
     buttonText: "Get Delegate Pass",
     buttonLink: "/register?t=delegate",
     imagePosition: "left",
@@ -65,7 +65,7 @@ export function EvMission() {
           {missionData.map((item, index) => (
             <div
               key={index}
-              className="border border-gray-200 rounded-md overflow-hidden flex flex-col md:flex-row"
+              className=" border-2 [border-image-source:linear-gradient(180deg,#000000,#0DB6C9)] [border-image-slice:1]  overflow-hidden flex flex-col md:flex-row"
               style={{ flexDirection: item.imagePosition === "right" ? "row-reverse" : "row" }}
             >
               {/* Image Section */}
@@ -74,8 +74,8 @@ export function EvMission() {
               </div>
 
               {/* Content Section */}
-              <div className="p-4 sm:p-6 md:p-8 md:w-1/2 flex flex-col justify-center">
-                <h3 className="text-2xl sm:text-3xl font-bold mb-2 sm:mb-4">{item.title}</h3>
+              <div className="p-4 sm:p-6 md:p-20 md:w-1/2 flex flex-col justify-center ">
+                <h3 className="text-2xl sm:text-3xl md:text-6xl font-bold mb-2 sm:mb-4 text-center">{item.title}</h3>
                 <p className="text-gray-700 mb-4 sm:mb-6 text-sm sm:text-base">
                   {item.description.split("#rev25").map((part, idx, arr) => (
                     <span key={idx}>

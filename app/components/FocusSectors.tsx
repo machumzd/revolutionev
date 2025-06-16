@@ -37,7 +37,7 @@ export default function EVCategoriesGrid() {
 
   return (
     <div>
-<h2 className="text-5xl font-semibold ml-50 mb-6">
+<h2 className="text-4xl md:text-5xl font-semibold ml-4 md:ml-50 mb-6">
   Focus <span className="text-sky-500 font-bold">Sectors</span>
 </h2>
 
