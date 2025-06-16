@@ -1,8 +1,29 @@
 export const revalidate = 60;
 
 import PortableTextRenderer from "@/app/components/utils/PortableTextRenderer";
+import { buildMetadata } from "@/lib/seo/metadataBuilder";
 import { getBlogPostBySlug } from "@/sanity/lib/blogs"; // Update this to your actual fetch function
+import { Metadata } from "next";
 import { notFound } from "next/navigation";
+
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
+  const blog = await getBlogPostBySlug(params.slug);
+
+  if (!blog) return {};
+
+  return buildMetadata({
+    title: blog.title,
+    description: blog.excerpt || "A blog post about electric mobility.",
+    slug: params.slug,
+    basePath: "blog",
+    image: blog.mainImage || "/og-image.png",
+  });
+}
 
 export default async function BlogPostPage({ params }: { params: { blogId: string } }) {
   const blog = await getBlogPostBySlug(params.blogId); // or by ID

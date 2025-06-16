@@ -17,6 +17,10 @@ const attendeeProfiles = [
   "Renewable Energy Companies",
   "Legal Compliance & Intellectual Property Experts",
 ]
+export const metadata = {
+  title: "About Revolution EV Malaysia 2025",
+  description: "Revolution EV Malaysia is the flagship event accelerating the adoption of electric vehicles in Malaysia. Learn more about our vision, mission, and purpose.",
+};
 
 export default function Home() {
   return (
