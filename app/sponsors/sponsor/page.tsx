@@ -1,6 +1,12 @@
-"use client"
+
 
 import React from "react"
+
+export const metadata = {
+  title: "Become a Sponsor | Revolution EV Malaysia 2025",
+  description: "Position your brand at the forefront of Malaysia's EV future. Sponsor Revolution EV 2025 to gain visibility, thought leadership, and strategic opportunities.",
+};
+
 
 export default function Sponsor(){
     return(
