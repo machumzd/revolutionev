@@ -48,8 +48,8 @@ export default function WhyMalaysia() {
     <div className="bg-black text-white min-h-screen px-4 py-12 relative">
       <div className="max-w-6xl mx-auto space-y-12">
         {/* Header */}
-        <div className="text-center md:text-left">
-          <h1 className="text-3xl md:text-4xl font-light text-transparent bg-clip-text bg-[linear-gradient(75.19deg,_#0DB6C9_5.79%,_#56C847_97.32%)]" style={{ fontFamily: "var(--font-dm-sans)" }}>
+        <div className="relative z-30 text-center md:text-left ">
+          <h1 className="text-3xl md:text-4xl font-semibold text-transparent bg-clip-text bg-[linear-gradient(75.19deg,_#0DB6C9_5.79%,_#56C847_97.32%)]" style={{ fontFamily: "var(--font-dm-sans)" }}>
             Why Malaysia
           </h1>
           <p className="text-sm text-gray-300 max-w-4xl mx-auto md:mx-0 leading-relaxed">
@@ -67,7 +67,8 @@ export default function WhyMalaysia() {
             {/* Left Side - Green SVG + Text */}
             <div className="relative z-10 w-full">
               {/* Background Image */}
-              <div className="absolute inset-0 -top-10 scale-125 left-0 md:-left-30 md:-top-50 ">
+            <div className="absolute inset-0 -top-10 scale-125 left-0 md:-left-30 md:-top-50 ">
+
                 <Image
                   src={GreenCircles}
                   alt="Green Circles"
