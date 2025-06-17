@@ -1,48 +1,51 @@
-import Image from "next/image"
-import Link from "next/link"
+import Image from "next/image";
+import Link from "next/link";
 
 const highlights = [
   {
     title: (
       <>
-        A <span className="text-sky-500 font-semibold">Two-Day Conference</span> With Leaders In E-Mobility From Around
-        The World.
+        A <span className="text-sky-500 font-semibold">Two-Day Conference</span>{" "}
+        With Leaders In E-Mobility From Around The World.
       </>
     ),
-    image: "/image/About/pexels-divinetechygirl-1181396.jpg",
+    image: "/image/About/cars.jpg",
     align: "left",
   },
   {
     title: (
       <>
-        <span className="text-sky-500 font-semibold">20+ Exhibitors</span> Showcasing The Latest Electric Vehicle
-        Innovations.
+        <span className="text-sky-500 font-semibold">40+ Exhibitors</span>{" "}
+        Showcasing The Latest Electric Vehicle Innovations.
       </>
     ),
-    image: "/image/About/expo.png",
+    image: "/image/About/people.jpg",
     align: "right",
   },
   {
     title: (
       <>
-        <span className="text-sky-500 font-semibold">The Policy Roundtable</span> With Representatives Of The
-        Government.
+        <span className="text-sky-500 font-semibold">
+          The Policy Roundtable
+        </span>{" "}
+        With Representatives Of The Government.
       </>
     ),
-    image: "/image/About/pexels-fauxels-3183197.jpg",
+    image: "/image/About/audience.jpg",
     align: "left",
   },
   {
     title: (
       <>
         <span className="text-sky-500 font-semibold">Product Demos</span> and{" "}
-        <span className="text-sky-500 font-semibold">Startup Pitching</span> In Real Time
+        <span className="text-sky-500 font-semibold">Startup Pitching</span> In
+        Real Time
       </>
     ),
-    image: "/image/About/12354.jpg",
+    image: "/image/About/carEv.jpg",
     align: "right",
   },
-]
+];
 
 export default function EventHighlights() {
   return (
@@ -53,7 +56,11 @@ export default function EventHighlights() {
         </h2>
         <div className="space-y-8">
           {highlights.map((item, idx) => (
-            <div key={idx} className="relative w-full aspect-[16/6] md:aspect-[20/6] overflow-hidden rounded-lg">
+            <div
+              key={idx}
+              className="relative w-full aspect-[4/3]
+             md:aspect-[30/6] overflow-hidden "
+            >
               {/* Background Image */}
               <Image
                 src={item.image || "/placeholder.svg"}
@@ -66,12 +73,11 @@ export default function EventHighlights() {
               <div className="absolute bottom-0 left-0 w-full h-[40%] bg-gradient-to-t from-sky-500/80 to-transparent z-10" />
 
               {/* Text Overlay */}
-  <div
-  className={`absolute top-[65%] bg-white text-black text-lg md:text-xl font-medium p-6 md:p-8 shadow-xl max-w-lg z-20 ${
-    item.align === "left" ? "left-8" : "right-8 mb-10"
-  }`}
->
-
+              <div
+                className={`absolute bottom-0 bg-white text-black text-sm md:text-xl font-medium p-6 md:p-8 shadow-xl max-w-lg z-20 ${
+                  item.align === "left" ? "left-0" : "right-0"
+                }`}
+              >
                 {item.title}
               </div>
             </div>
@@ -87,5 +93,5 @@ export default function EventHighlights() {
         </div>
       </div>
     </section>
-  )
+  );
 }
