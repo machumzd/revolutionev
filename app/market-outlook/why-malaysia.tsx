@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import GreenCircles from "@/public/image/marketOutLook/greenCircle.svg";
+import GreenCircles from "@/public/image/market-outlook/greenCircle.svg";
 
 const data = [
   {
@@ -11,35 +11,35 @@ const data = [
     secondTitle: "Policies",
     description:
       "With its proactive policies and expanding infrastructure, Malaysia is quickly becoming a critical hub for EV growth in Southeast Asia as the shift from mobility to e-mobility becomes more evident in the face of increasing climate challenges",
-    image: "/image/marketOutlook/img1.png",
+    image: "/image/market-outlook/img1.png",
   },
   {
     title: "Focus on Sustainability and ",
     secondTitle: "Green Investments",
     description:
       "Malaysia’s innovation trajectory is gaining momentum, with a strong focus on funding for startups, EV manufacturing, and the expansion of charging infrastructure, transforming the country into a dynamic hub for sustainable mobility and tech-driven growth",
-    image: "/image/marketOutlook/img2.png",
+    image: "/image/market-outlook/img2.png",
   },
   {
     title: "Advancements in ",
     secondTitle: "Battery Technology",
     description:
       "Better EV performance and cost are being driven by advancements in battery technology, and the most recent developments in the Malaysian market are creating exciting prospects for the e-mobility sector",
-    image: "/image/marketOutlook/img3.png",
+    image: "/image/market-outlook/img3.png",
   },
   {
     title: "Vehicle to Grid",
     secondTitle: " Integration",
     description:
       "Vehicle to Grid (V2G) allows electric vehicles to send power back to the grid whenever needed.  As Malaysia accelerates EV adoption, V2G can play a key role in integrating energy and technology",
-    image: "/image/marketOutlook/img4.png",
+    image: "/image/market-outlook/img4.png",
   },
   {
     title: "Smart Mobility Solutions for Smart Cities",
     secondTitle: "Smart Cities",
     description:
       "Malaysia’s strategic move to integrate e-mobility with smart technologies such as IoT and AI aims to create a more efficient, sustainable, and interconnected transportation system",
-    image: "/image/marketOutlook/img5.png",
+    image: "/image/market-outlook/img5.png",
   },
 ];
 
