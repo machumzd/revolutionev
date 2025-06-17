@@ -54,22 +54,21 @@ export default function WhyAttend() {
               <img
                 src={item.image}
                 alt=""
-                className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"
+                className="absolute inset-0 w-full h-full object-cover opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 z-0"
               />
 
-              {/* Overlay to darken the background for better text contrast */}
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition duration-500 z-10" />
 
               {/* Number */}
               <div className="relative z-20">
-                <p className="text-xl sm:text-2xl md:text-6xl font-bold transition-colors duration-500 group-hover:text-white">
+                <p className="text-xl sm:text-2xl md:text-6xl font-bold transition-colors duration-500 group-hover:text-white text-black">
                   {item.number}
                 </p>
               </div>
 
               {/* Text */}
               <div className="relative z-20">
-                <p className="text-xs sm:text-sm md:text-base font-medium leading-snug transition-colors duration-500 group-hover:text-white">
+                <p className="text-xs sm:text-sm md:text-base font-medium leading-snug transition-colors duration-500 group-hover:text-white text-black">
                   {item.text}
                 </p>
               </div>

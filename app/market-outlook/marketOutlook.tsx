@@ -5,7 +5,7 @@ export default function Component() {
     <div
       className="bg-black text-white min-h-screen p-8"
     >
-      <div className="max-w-4xl mx-auto space-y-8">
+      <div className="max-w-6xl mx-auto space-y-8">
         {/* Header */}
         <div className="text-sm text-gray-400 mb-2">Market Outlook</div>
 
@@ -49,7 +49,7 @@ export default function Component() {
         </div>
 
         {/* Full-width 3rd and 4th paragraphs */}
-        <div className="w-full max-w-4xl ml-auto mt-8 pr-12 text-sm leading-relaxed space-y-4">
+        <div className="w-full max-w-6xl ml-auto mt-8 pr-12 text-sm leading-relaxed space-y-4">
           <p>
             Recent surveys by EY reveal that 25% of Malaysian consumers are
             considering an EV for their next vehicle purchase, driven by rising

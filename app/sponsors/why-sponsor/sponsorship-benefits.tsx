@@ -29,7 +29,7 @@ function SponsorCard({
       </div>
 
       {/* Text Content */}
-      <div className="absolute top-2 left-2 right-2 bg-white px-4 py-4 md:pt-16 md:pb-14 text-black">
+      <div className="absolute top-2 left-2 right-2 bg-white px-4 py-4 md:pt-10 md:pb-10 text-black">
         <h3 className="text-xl md:text-4xl font-normal leading-snug">
           {title}
         </h3>
@@ -46,11 +46,11 @@ function SponsorCard({
 
 export default function SponsorshipBenefits() {
   return (
-    <div className="bg-black text-white p-6 md:p-10 min-h-screen">
+    <div className=" bg-black text-white p-6 md:p-10 min-h-screen">
       <h2 className="text-2xl md:text-3xl font-normal mb-8">Why Sponsor?</h2>
 
       {/* Main Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-20" >
         <SponsorCard
           title="Brand"
           subtitle="Positioning"
@@ -84,7 +84,7 @@ export default function SponsorshipBenefits() {
       </div>
 
       {/* Last 2 Cards */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6 px-20">
         <SponsorCard
           title="PR"
           subtitle="Support"
