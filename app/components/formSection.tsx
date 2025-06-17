@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import TextField from "./textField";
 import { toast } from "./ui/use-toast";
 import PhoneInputField from "./ui/phoneInputField";
+import { event } from "@/lib/gtag";
 
 const industryOptions = [
   "Electric Vehicles (EVs)",
@@ -108,6 +109,11 @@ const FormSection = ({
         body: JSON.stringify({ type, ...values }),
       });
       const data = await res.json();
+       event({
+        action: "form_submit",
+        category: "lead",
+        label: type, 
+      });
       return data;
     } catch (error) {
       console.error("Error:", error);

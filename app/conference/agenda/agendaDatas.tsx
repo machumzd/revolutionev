@@ -1,16 +1,23 @@
-export type Session = {
-  time: string;
-  title: string;
-  description?: string;
-  type?: 'Keynote' | 'Presentation' | 'Q&A' | 'Break' | 'Panel';
-  session?: string;
-};
+// app/components/agenda/agendaData.ts
 
-export type AgendaDay = {
-  label: string;
-  date: string;
-  sessions: Session[];
-};
+export type AgendaItemType = "keynote" | "panel" | "presentation" | "qa" | "break" | "networking";
+
+interface AgendaSlot {
+  time: string;
+  type: AgendaItemType;
+  title: string;
+  speaker?: {
+    name: string;
+    role: string;
+  };
+}
+
+interface AgendaBlock {
+  sessionTitle?: string;
+  sessionTime?: string;
+  sessionDescription?: string;
+  items: AgendaSlot[];
+}
 
 export const agendaData: Record<'day1' | 'day2', AgendaDay> = {
   day1: {
