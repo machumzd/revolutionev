@@ -1,26 +1,36 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { useEffect, useState } from "react"
-import CountUp from "react-countup"
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import CountUp from "react-countup";
 
 // Define the stats data
 const statsData = [
   { label: "Speakers", count: 80, suffix: "+", color: "bg-cyan-400" },
   { label: "Delegates", count: 300, suffix: "+", color: "bg-green-400" },
-  { label: "Sponsors & Exhibitors", count: 40, suffix: "+", color: "bg-cyan-400" },
+  {
+    label: "Sponsors & Exhibitors",
+    count: 40,
+    suffix: "+",
+    color: "bg-cyan-400",
+  },
   { label: "Attendees", count: 3000, suffix: "+", color: "bg-green-400" },
   { label: "Partners", count: 20, suffix: "+", color: "bg-cyan-400" },
-]
+];
 
 type StatCardProps = {
-  count: number
-  label: string
-  suffix?: string
-  color?: string
-}
+  count: number;
+  label: string;
+  suffix?: string;
+  color?: string;
+};
 
-function StatCard({ count, label, suffix = "", color = "bg-cyan-400" }: StatCardProps) {
+function StatCard({
+  count,
+  label,
+  suffix = "",
+  color = "bg-cyan-400",
+}: StatCardProps) {
   return (
     <div
       className={`${color} text-black px-6 py-4 flex items-center justify-between min-w-[250px] rounded-md shadow-md`}
@@ -48,29 +58,29 @@ function StatCard({ count, label, suffix = "", color = "bg-cyan-400" }: StatCard
         </svg>
       </div>
     </div>
-  )
+  );
 }
 
 export default function EVEventHero() {
-  const [activeIndex, setActiveIndex] = useState(0)
-  const [isPaused, setIsPaused] = useState(false)
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
   const handleArrowClick = () => {
-    setActiveIndex((current) => (current + 1) % statsData.length)
-    setIsPaused(true)
+    setActiveIndex((current) => (current + 1) % statsData.length);
+    setIsPaused(true);
     // Resume auto-cycle after 8 seconds of no interaction
-    setTimeout(() => setIsPaused(false), 8000)
-  }
+    setTimeout(() => setIsPaused(false), 8000);
+  };
 
   useEffect(() => {
-    if (isPaused) return
+    if (isPaused) return;
 
     const interval = setInterval(() => {
-      setActiveIndex((current) => (current + 1) % statsData.length)
-    }, 4000)
+      setActiveIndex((current) => (current + 1) % statsData.length);
+    }, 4000);
 
-    return () => clearInterval(interval)
-  }, [isPaused])
+    return () => clearInterval(interval);
+  }, [isPaused]);
 
   return (
     <section className="px-4 sm:px-6 py-8 sm:py-12 md:py-20 bg-white text-black">
@@ -78,20 +88,25 @@ export default function EVEventHero() {
         {/* Text Section */}
         <div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
-            Welcome to <span className="text-cyan-400">Malaysia's</span> Flagship EV Event | Revolution{" "}
+            Welcome to <span className="text-cyan-400">Malaysia's</span>{" "}
+            Flagship EV Event | Revolution{" "}
             <span className="text-sky-400">EV 2025</span>
           </h2>
           <p className="text-gray-700 mb-6 text-sm sm:text-base">
-            Revolution EV Malaysia 2025 is Malaysia's flagship EV event dedicated to advancing electric mobility,
-            featuring unrivalled electric vehicles and next-generation zero-emission vehicle innovations.{" "}
-            <span className="text-sky-400">#rev25</span>, is designed to bring people together, encourage new ideas,
-            growth, and further cooperation within Malaysia's emerging e-mobility industry. The event will bring
-            together policymakers, investors, innovators, industry pioneers, and government leaders to propel the
-            advancements of electric mobility across Malaysia and beyond. <br />
+            Revolution EV Malaysia 2025 is Malaysia's flagship EV event
+            dedicated to advancing electric mobility, featuring unrivalled
+            electric vehicles and next-generation zero-emission vehicle
+            innovations. <span className="text-sky-400">#rev25</span>, is
+            designed to bring people together, encourage new ideas, growth, and
+            further cooperation within Malaysia's emerging e-mobility industry.
+            The event will bring together policymakers, investors, innovators,
+            industry pioneers, and government leaders to propel the advancements
+            of electric mobility across Malaysia and beyond. <br />
             <br />
             <b>
-              Join us from 23rd to 24th of October 2025 in Kuala Lumpur for two power-packed days of thought leadership,
-              innovative showcases, and strategic networking as we drive Malaysia toward its EV future.
+              Join us from 23rd to 24th of October 2025 in Kuala Lumpur for two
+              power-packed days of thought leadership, innovative showcases, and
+              strategic networking as we drive Malaysia toward its EV future.
             </b>
           </p>
 
@@ -110,11 +125,14 @@ export default function EVEventHero() {
         </div>
 
         {/* Image Section */}
-        <div className="w-full h-auto rounded-lg overflow-hidden shadow-lg">
-          <img
-            src="/image/Video/futuristic-electric-car-charging-GIF.gif"
-            alt="Electric Vehicle"
+        <div className="w-full rounded-lg overflow-hidden shadow-lg aspect-[16/9] sm:aspect-[4/3] md:aspect-[3/2]">
+          <video
             className="w-full h-full object-cover"
+            src="/videos/maxpo.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
           />
         </div>
       </div>
@@ -126,7 +144,8 @@ export default function EVEventHero() {
           {/* Left Side: Heading - Fixed */}
           <div className="bg-white p-4 sm:p-6 flex items-center justify-start w-full sm:w-1/3">
             <h2 className="text-3xl sm:text-5xl lg:text-[70px] font-light leading-none">
-              <span className="text-gray-400">Expected</span> <span className="font-bold text-black">Numbers</span>
+              <span className="text-gray-400">Expected</span>{" "}
+              <span className="font-bold text-black">Numbers</span>
             </h2>
           </div>
 
@@ -139,8 +158,8 @@ export default function EVEventHero() {
                   index === activeIndex
                     ? "opacity-100 translate-x-0"
                     : index < activeIndex
-                      ? "opacity-0 -translate-x-full"
-                      : "opacity-0 translate-x-full"
+                    ? "opacity-0 -translate-x-full"
+                    : "opacity-0 translate-x-full"
                 }`}
               >
                 <div
@@ -151,7 +170,9 @@ export default function EVEventHero() {
                       <CountUp end={stat.count} duration={2.5} />
                       {stat.suffix}
                     </h3>
-                    <p className="text-xl sm:text-3xl lg:text-[50px] font-medium">{stat.label}</p>
+                    <p className="text-xl sm:text-3xl lg:text-[50px] font-medium">
+                      {stat.label}
+                    </p>
                   </div>
 
                   {/* Clickable Dynamic Arrow - advances to next stat when clicked */}
@@ -211,5 +232,5 @@ export default function EVEventHero() {
         </div> */}
       </div>
     </section>
-  )
+  );
 }
