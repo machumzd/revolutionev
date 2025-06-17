@@ -1,6 +1,7 @@
 import HeroSection from "./hero-section"
 import EventHighlights from "./event-highlights"
 import EventFormatAndAttendees from "./EventFormatAndAttendees"
+import EventFormat from "../components/eventFormat";
 
 const attendeeProfiles = [
   "Original Equipment Manufacturers",
@@ -27,6 +28,7 @@ export default function Home() {
     <main className="min-h-screen">
       <HeroSection />
       <EventHighlights />
+      <EventFormat/>
       <EventFormatAndAttendees attendeeProfiles={attendeeProfiles} />
     </main>
   )

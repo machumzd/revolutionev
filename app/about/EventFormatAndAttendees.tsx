@@ -16,6 +16,7 @@ import {
 } from "lucide-react"
 
 import type React from "react"
+import EventFormat from "../components/eventFormat"
 
 interface EventFormatAttendeesProps {
   attendeeProfiles: string[]
@@ -39,7 +40,8 @@ const EventFormatAttendees: React.FC<EventFormatAttendeesProps> = ({ attendeePro
   ]
 
   return (
-    <section className="py-16 bg-white">
+    <section className="pb-16 bg-white">
+      
       <div className="max-w-7xl mx-auto px-4">
         {/* Title */}
         <h2 className="text-4xl md:text-5xl font-bold mb-12">
