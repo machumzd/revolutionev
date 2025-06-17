@@ -19,7 +19,7 @@ const highlights = [
         Showcasing The Latest Electric Vehicle Innovations.
       </>
     ),
-    image: "/image/About/people.jpg",
+    image: "/image/About/img2.png",
     align: "right",
   },
   {
@@ -31,7 +31,7 @@ const highlights = [
         With Representatives Of The Government.
       </>
     ),
-    image: "/image/About/hands.png",
+    image: "/image/About/img3.png",
     align: "left",
   },
   {
@@ -42,7 +42,7 @@ const highlights = [
         Real Time
       </>
     ),
-    image: "/image/About/carEv.png",
+    image: "/image/About/img4.png",
     align: "right",
   },
 ];
