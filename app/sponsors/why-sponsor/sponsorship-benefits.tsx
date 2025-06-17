@@ -54,32 +54,32 @@ export default function SponsorshipBenefits() {
         <SponsorCard
           title="Brand"
           subtitle="Positioning"
-          image="/image/Sponsors/Vector 141.png"
+          image="/image/Sponsors/img1.png"
         />
         <SponsorCard
           title="Direct access to"
           subtitle="decision-makers"
-          image="/image/Sponsors/Vector 141.png"
+          image="/image/Sponsors/img2.png"
         />
         <SponsorCard
           title="High-Quality"
           subtitle="Networking Opportunities"
-          image="/image/Sponsors/Vector 141.png"
+          image="/image/Sponsors/img3.png"
         />
         <SponsorCard
           title="Boost Visibility with"
           subtitle="Strategic Branding"
-          image="/image/Sponsors/Vector 141.png"
+          image="/image/Sponsors/img4.png"
         />
         <SponsorCard
           title="Email"
           subtitle="Branding"
-          image="/image/Sponsors/Vector 141.png"
+          image="/image/Sponsors/img5.png"
         />
         <SponsorCard
           title="Social Media"
           subtitle="Endorsement"
-          image="/image/Sponsors/Vector 141.png"
+          image="/image/Sponsors/img6.png"
         />
       </div>
 
@@ -88,12 +88,12 @@ export default function SponsorshipBenefits() {
         <SponsorCard
           title="PR"
           subtitle="Support"
-          image="/image/Sponsors/Vector 141.png"
+          image="/image/Sponsors/img7.png"
         />
         <SponsorCard
           title="Speaking"
           subtitle="Opportunities"
-          image="/image/Sponsors/Vector 141.png"
+          image="/image/Sponsors/img8.png"
         />
       </div>
 
