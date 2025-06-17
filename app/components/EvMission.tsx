@@ -25,7 +25,7 @@ const missionData: MissionItem[] = [
     title: "Exhibition",
     description:
       "Malaysia's most prestigious e-mobility event, #rev25, serves as your entry point to South-East Asia's rapidly expanding electric vehicle industry, offering invaluable opportunities whether you're introducing a product, expanding your business, or boosting brand awareness.",
-    image: "/image/evMission/showRoom.jpg",
+    image: "/image/evMission/showroom.png",
     buttonText: "Book Your Stand",
     buttonLink: "/register?t=exhibitor",
     imagePosition: "right",
@@ -34,7 +34,7 @@ const missionData: MissionItem[] = [
     title: "Networking",
     description:
       "Connect directly with top EV leaders, tech innovators, and investors during Malaysia's e-mobility transformation. Build strong business relationships, share ideas for the future, and open doors to strategic alliances. Expand your impact within the rapidly expanding EV industry to hasten your success.",
-    image: "/image/evMission/shakeHand.jpg",
+    image: "/image/evMission/networking.png",
     buttonText: "Get Delegate Pass",
     buttonLink: "/register?t=delegate",
     imagePosition: "left",

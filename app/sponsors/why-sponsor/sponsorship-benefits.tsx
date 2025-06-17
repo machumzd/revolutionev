@@ -6,6 +6,7 @@ type SponsorCardProps = {
   subtitle: string;
   image: string;
   className?: string;
+  big?: boolean;
 };
 
 function SponsorCard({
@@ -13,30 +14,33 @@ function SponsorCard({
   subtitle,
   image,
   className = "",
+  big = false,
 }: SponsorCardProps) {
   return (
     <div
-      className={`bg-white overflow-hidden relative w-full h-auto md:h-[848px] p-3 pb-8 pl-4 md:pl-8 ${className}`}
+      className={`bg-white overflow-hidden relative w-full h-full p-6 md:p-10 ${className}`}
     >
+       <div className="relative w-full bg-white text-black p-2">
+        <h3 className="text-xl md:text-2xl font-normal leading-snug">
+          {title}
+        </h3>
+        <h3 className="text-xl md:text-2xl font-normal leading-snug">
+          {subtitle}
+        </h3>
+      </div>
       {/* Image */}
-      <div className="relative w-full h-[250px] md:h-[calc(100%-24px)] md:w-[calc(100%-24px)] overflow-hidden">
+      <div className="relative w-full h-full">
         <Image
           src={image}
+          width={big ? 717 : 470}
+          height={big ? 680 : 620}
           alt={`${title} ${subtitle}`}
-          fill
-          className="object-cover"
+          className="object-contain"
         />
       </div>
 
       {/* Text Content */}
-      <div className="absolute top-2 left-2 right-2 bg-white px-4 py-4 md:pt-10 md:pb-10 text-black">
-        <h3 className="text-xl md:text-4xl font-normal leading-snug">
-          {title}
-        </h3>
-        <h3 className="text-xl md:text-4xl font-normal leading-snug">
-          {subtitle}
-        </h3>
-      </div>
+     
 
       {/* Arrow Shape */}
       <div className="absolute bottom-6 right-2 md:bottom-9 md:right-4 border-r-[40px] md:border-r-[70px] border-r-transparent border-t-[40px] md:border-t-[70px] border-t-teal-400" />
@@ -48,55 +52,57 @@ export default function SponsorshipBenefits() {
   return (
     <div className=" bg-black text-white p-6 md:p-10 min-h-screen">
       <h2 className="text-2xl md:text-3xl font-normal mb-8">Why Sponsor?</h2>
+      <div className="container mx-auto mb-12 ">
+        {/* Main Grid */}
+        <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10 ">
+          <SponsorCard
+            title="Brand"
+            subtitle="Positioning"
+            image="/image/Sponsors/img1.png"
+          />
+          <SponsorCard
+            title="Direct access to"
+            subtitle="decision-makers"
+            image="/image/Sponsors/img2.png"
+          />
+          <SponsorCard
+            title="High-Quality"
+            subtitle="Networking Opportunities"
+            image="/image/Sponsors/img3.png"
+          />
+          <SponsorCard
+            title="Boost Visibility with"
+            subtitle="Strategic Branding"
+            image="/image/Sponsors/img4.png"
+          />
+          <SponsorCard
+            title="Email"
+            subtitle="Branding"
+            image="/image/Sponsors/img5.png"
+          />
+          <SponsorCard
+            title="Social Media"
+            subtitle="Endorsement"
+            image="/image/Sponsors/img6.png"
+          />
+        </div>
 
-      {/* Main Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-10" >
-        <SponsorCard
-          title="Brand"
-          subtitle="Positioning"
-          image="/image/Sponsors/img1.png"
-        />
-        <SponsorCard
-          title="Direct access to"
-          subtitle="decision-makers"
-          image="/image/Sponsors/img2.png"
-        />
-        <SponsorCard
-          title="High-Quality"
-          subtitle="Networking Opportunities"
-          image="/image/Sponsors/img3.png"
-        />
-        <SponsorCard
-          title="Boost Visibility with"
-          subtitle="Strategic Branding"
-          image="/image/Sponsors/img4.png"
-        />
-        <SponsorCard
-          title="Email"
-          subtitle="Branding"
-          image="/image/Sponsors/img5.png"
-        />
-        <SponsorCard
-          title="Social Media"
-          subtitle="Endorsement"
-          image="/image/Sponsors/img6.png"
-        />
+        {/* Last 2 Cards */}
+        <div className=" grid grid-cols-1 lg:grid-cols-2 gap-6 ">
+          <SponsorCard
+            title="PR"
+            subtitle="Support"
+            big={true}
+            image="/image/Sponsors/img7.png"
+          />
+          <SponsorCard
+            title="Speaking"
+            subtitle="Opportunities"
+            big={true}
+            image="/image/Sponsors/img8.png"
+          />
+        </div>
       </div>
-
-      {/* Last 2 Cards */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6 px-20">
-        <SponsorCard
-          title="PR"
-          subtitle="Support"
-          image="/image/Sponsors/img7.png"
-        />
-        <SponsorCard
-          title="Speaking"
-          subtitle="Opportunities"
-          image="/image/Sponsors/img8.png"
-        />
-      </div>
-
       {/* CTA Buttons */}
       <div className="flex flex-col md:flex-row justify-center mt-8 gap-4">
         <Link href="/register?t=sponsor">
