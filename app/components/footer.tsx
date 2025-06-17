@@ -211,7 +211,7 @@ export default function Footer() {
                     href="/exhibition/exhibitor"
                     className="hover:text-[#00E1B0]"
                   >
-                    Exhibitor
+                    Exhibitors
                   </Link>
                 </li>
                 <li>
