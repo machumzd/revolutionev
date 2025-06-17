@@ -85,7 +85,7 @@ export default function Navbar() {
   const dropdownItems = {
     exhibition: [
       { href: "/exhibition/why-exhibit", label: "Why Exhibit" },
-      { href: "/exhibition/exhibitor", label: "Exhibitors" },
+      { href: "/exhibition/exhibitor", label: "Exhibitors",disabled: true },
       {
         href: "/register?t=exhibitor",
         label: "Exhibitors Enquiry",
@@ -95,23 +95,23 @@ export default function Navbar() {
     ],
     conference: [
       { href: "/conference/why-attend", label: "Why Attend" },
-      { href: "/conference/agenda", label: "Agenda" },
+      { href: "/conference/agenda", label: "Agenda" ,disabled: true },
       { href: "/register?t=speaker", label: "Speaker Enquiry", bold: true },
     ],
     sponsors: [
       { href: "/sponsors/why-sponsor", label: "Why Sponsor" },
-      { href: "/sponsors/sponsor", label: "Sponsors" },
+      { href: "/sponsors/sponsor", label: "Sponsors",disabled: true },
       { href: "/register?t=sponsor", label: "Sponsorship Enquiry", bold: true },
     ],
     partners: [
-      { href: "/partners/media-partner", label: "Media Partner" },
-      { href: "/partners/supporting-partners", label: "Supporting Partner" },
+      { href: "/partners/media-partner", label: "Media Partner",disabled: true },
+      { href: "/partners/supporting-partners", label: "Supporting Partner",disabled: true },
       { href: "/register?t=partner", label: "Partner Enquiry", bold: true },
     ],
     more: [
       { href: "/market-outlook", label: "Market Outlook" },
       { href: "/blogs", label: "News & Blogs" },
-      { href: "/testimonial", label: "Testimonials" },
+      { href: "/testimonial", label: "Testimonials" ,disabled: true},
       { href: "/faq", label: "FAQs" },
     ],
   };
@@ -162,6 +162,7 @@ export default function Navbar() {
                 key={index}
                 href={item.href}
                 className={`
+                  ${item.disabled ? "pointer-events-none cursor-not-allowed opacity-50" : ""}
                   block px-4 py-2 text-sm hover:bg-gray-100 transition-colors
                   ${
                     isMobile
@@ -171,6 +172,7 @@ export default function Navbar() {
                   ${item.bold ? "font-bold" : ""}
                 `}
                 onClick={() => {
+                  if(item.disabled) return
                   closeAllDropdowns();
                   if (isMobile) setIsMenuOpen(false);
                 }}
