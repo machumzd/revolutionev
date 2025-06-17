@@ -9,7 +9,7 @@ const highlights = [
         With Leaders In E-Mobility From Around The World.
       </>
     ),
-    image: "/image/About/cars.jpg",
+    image: "/image/About/conference.png",
     align: "left",
   },
   {
@@ -31,7 +31,7 @@ const highlights = [
         With Representatives Of The Government.
       </>
     ),
-    image: "/image/About/audience.jpg",
+    image: "/image/About/hands.png",
     align: "left",
   },
   {
@@ -42,7 +42,7 @@ const highlights = [
         Real Time
       </>
     ),
-    image: "/image/About/carEv.jpg",
+    image: "/image/About/carEv.png",
     align: "right",
   },
 ];

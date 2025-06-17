@@ -1,7 +1,10 @@
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import img from "@/public/image/exhibit/whyexhibit.png"
-import car from "@/public/image/exhibit/car.png"
+import connect from "@/public/image/exhibit/connect.png"
+import lead from "@/public/image/exhibit/lead.png"
+import showCase from "@/public/image/exhibit/showcase.png"
+
 import Link from "next/link"
 
 export default function ExhibitionShowcaseSection() {
@@ -76,7 +79,7 @@ export default function ExhibitionShowcaseSection() {
             <div className="space-y-4">
               <div className="relative">
                 <Image
-                  src={car || "/placeholder.svg"}
+                  src={showCase || "/placeholder.svg"}
                   alt="White Electric Vehicle"
                   width={300}
                   height={200}
@@ -97,7 +100,7 @@ export default function ExhibitionShowcaseSection() {
             <div className="space-y-4">
               <div className="relative">
                 <Image
-                  src={car || "/placeholder.svg"}
+                  src={connect || "/placeholder.svg"}
                   alt="White Electric Vehicle"
                   width={300}
                   height={200}
@@ -118,7 +121,7 @@ export default function ExhibitionShowcaseSection() {
             <div className="space-y-4">
               <div className="relative">
                 <Image
-                  src={car || "/placeholder.svg"}
+                  src={lead || "/placeholder.svg"}
                   alt="White Electric Vehicle"
                   width={300}
                   height={200}

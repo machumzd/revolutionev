@@ -48,10 +48,10 @@ export default function Hero() {
         {/* Buttons */}
         <div className="mb-6 sm:mb-10 flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 ">
           <Link
-            href="/conference/agenda"
+            href="/register"
             className="min-w-[180px] border border-white bg-transparent px-6 py-3 text-sm font-normal tracking-wide text-white transition-all duration-300  hover:bg-white hover:text-black flex items-center justify-center"
           >
-            View Agenda
+            Register Now
           </Link>
           <Link
             href="/register?t=sponsor"

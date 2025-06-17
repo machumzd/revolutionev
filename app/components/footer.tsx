@@ -179,7 +179,8 @@ export default function Footer() {
                 <li>
                   <Link
                     href="/conference/agenda"
-                    className="hover:text-[#00E1B0]"
+                    className="hover:text-[#00E1B0] cursor-not-allowed pointer-events-none"
+                    onClick={(e) => e.preventDefault()}
                   >
                     Agenda
                   </Link>
@@ -200,7 +201,10 @@ export default function Footer() {
               <h3 className="text-xs sm:text-sm font-semibold mb-3 sm:mb-4">
                 Participants
               </h3>
-              <ul className="space-y-1 sm:space-y-2 text-xs sm:text-sm text-gray-300">
+              <ul
+                className="space-y-1 sm:space-y-2 text-xs sm:text-sm text-gray-300 cursor-not-allowed pointer-events-none "
+                onClick={(e) => e.preventDefault()}
+              >
                 <li>
                   <Link href="/speakers" className="hover:text-[#00E1B0]">
                     Speakers
@@ -211,7 +215,7 @@ export default function Footer() {
                     href="/exhibition/exhibitor"
                     className="hover:text-[#00E1B0]"
                   >
-                    Exhibitor
+                    Exhibitors
                   </Link>
                 </li>
                 <li>
@@ -288,7 +292,11 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-[#00E1B0]">
+                  <Link
+                    href="#"
+                    className="hover:text-[#00E1B0] pointer-events-none cursor-not-allowed "
+                    onClick={(e) => e.preventDefault()}
+                  >
                     Testimonials
                   </Link>
                 </li>
