@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 const reasons = [
   {
@@ -31,7 +31,7 @@ const reasons = [
     text: "Enhancing your brand's visibility in the evolving e-mobility space",
     image: "image/Attend/img6.png",
   },
-]
+];
 
 export default function WhyAttend() {
   return (
@@ -48,23 +48,35 @@ export default function WhyAttend() {
           {reasons.map((item, index) => (
             <div
               key={index}
-              className="relative h-60 sm:h-72 md:h-90 overflow-hidden bg-cover bg-center text-white flex items-end p-4 sm:p-6 hover:scale-[1.02] transition-all duration-300"
-              style={{ backgroundImage: `url(${item.image})` }}
+              className="group relative h-60 sm:h-72 md:h-90 rounded-md  border-2 [border-image-source:linear-gradient(180deg,#000000,#0DB6C9)] [border-image-slice:1]  flex flex-col justify-between p-4 sm:p-6 cursor-pointer transition-all duration-500"
             >
-               <div className="absolute top-4 left-6 z-10">
-                <p className="text-xs md:text-7xl font-semibold leading-snug drop-shadow-md">{item.number}</p>
-              </div>
-              {/* Slightly darker overlay for text clarity */}
-              <div className="absolute inset-0 bg-black/30 z-0" />
+              {/* Background image (invisible by default) */}
+              <img
+                src={item.image}
+                alt=""
+                className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"
+              />
 
-              {/* Text content */}
-              <div className="relative z-10">
-                <p className="text-xs sm:text-sm font-medium leading-snug drop-shadow-md line-clamp-3 max-w-5/6">{item.text}</p>
+              {/* Overlay to darken the background for better text contrast */}
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition duration-500 z-10" />
+
+              {/* Number */}
+              <div className="relative z-20">
+                <p className="text-xl sm:text-2xl md:text-6xl font-bold transition-colors duration-500 group-hover:text-white">
+                  {item.number}
+                </p>
+              </div>
+
+              {/* Text */}
+              <div className="relative z-20">
+                <p className="text-xs sm:text-sm md:text-base font-medium leading-snug transition-colors duration-500 group-hover:text-white">
+                  {item.text}
+                </p>
               </div>
             </div>
           ))}
         </div>
       </div>
     </div>
-  )
+  );
 }
