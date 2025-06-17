@@ -50,7 +50,7 @@ export default function SponsorshipBenefits() {
       <h2 className="text-2xl md:text-3xl font-normal mb-8">Why Sponsor?</h2>
 
       {/* Main Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-20" >
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-10" >
         <SponsorCard
           title="Brand"
           subtitle="Positioning"

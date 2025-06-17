@@ -84,7 +84,7 @@ export default function Component() {
       index === features.length - 1 ? "lg:col-span-2" : ""
     }`}
   >
-    <div className="relative w-full h-48 md:h-56">
+    <div className="relative w-full h-55 md:h-65">
       <Image
         src={feature.image || "/placeholder.svg"}
         alt={feature.title}
