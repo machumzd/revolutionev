@@ -6,6 +6,7 @@ import "react-phone-input-2/lib/style.css";
 import Navbar from "./components/NavBar";
 import Footer from "./components/footer";
 import Script from "next/script";
+import ClientAnalytics from "./components/utils/clientAnalytics";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -176,6 +177,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
+        <ClientAnalytics />
       </body>
     </html>
   );

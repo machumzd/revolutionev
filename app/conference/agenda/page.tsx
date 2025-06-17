@@ -1,14 +1,42 @@
 "use client"
-import Link from "next/link"
+
 import { useState } from "react"
+import { agendaData } from "./agendaDatas"
+
+type DayKey = 'day1' | 'day2'
 
 export default function Agenda() {
-  type DayKey = 'day1' | 'day2'
   const [activeDay, setActiveDay] = useState<DayKey>('day1')
+  const sessions = agendaData[activeDay].sessions
 
-  const days: Record<DayKey, string[]> = {
-    day1: ['Audi 1', '', '', '', ''],
-    day2: ['Audi 1', 'Audi B', 'Audi C', 'Audi D', 'Audi E'],
+  // Group agenda items by session
+  const grouped = sessions.reduce((acc: any, item) => {
+    if (item.session) {
+      acc[item.session] = acc[item.session] || []
+      acc[item.session].push(item)
+    } else {
+      acc.__misc = acc.__misc || []
+      acc.__misc.push(item)
+    }
+    return acc
+  }, {})
+
+  const getBadgeColor = (type: string) => {
+    switch (type.toLowerCase()) {
+      case "keynote":
+        return "bg-blue-200 text-blue-800"
+      case "presentation":
+        return "bg-yellow-200 text-yellow-800"
+      case "panel":
+        return "bg-purple-200 text-purple-800"
+      case "qa":
+        return "bg-sky-200 text-sky-800"
+      case "break":
+      case "networking":
+        return "bg-gray-200 text-gray-800"
+      default:
+        return "bg-gray-100 text-gray-700"
+    }
   }
 
   return (
@@ -17,58 +45,70 @@ export default function Agenda() {
         2025 Agenda
       </h1>
 
-      {/* Tab Buttons */}
+      {/* Tab Switcher */}
       <div className="flex space-x-4 mb-10">
-        <button
-          className={`px-6 py-2 rounded font-semibold transition-all ${
-            activeDay === 'day1'
-              ? 'bg-gradient-to-r from-green-400 to-teal-400 text-black'
-              : 'border border-gray-600'
-          }`}
-          onClick={() => setActiveDay('day1')}
-        >
-          Day One 23 October 2025
-        </button>
-        <button
-          className={`px-6 py-2 rounded font-semibold transition-all ${
-            activeDay === 'day2'
-              ? 'bg-gradient-to-r from-green-400 to-teal-400 text-black'
-              : 'border border-gray-600'
-          }`}
-          onClick={() => setActiveDay('day2')}
-        >
-          Day Two 24 October 2025
-        </button>
-      </div>
-
-      {/* Dynamic Day Label */}
-      <h2 className="text-xl font-semibold mb-6">
-        {activeDay === 'day1' ? 'Day 01 – 23 October 2025' : 'Day 02 – 24 October 2025'}
-      </h2>
-
-      {/* Cards */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mb-12">
-        {days[activeDay].map((title, index) => (
-          <div
-            key={index}
-            className={`rounded-md h-64 flex items-center justify-center text-white text-lg font-medium ${
-              index === 0
-                ? 'bg-gradient-to-br from-green-400 to-teal-400'
-                : 'bg-gradient-to-br from-green-50 via-white to-cyan-100 text-black'
+        {(['day1', 'day2'] as DayKey[]).map(day => (
+          <button
+            key={day}
+            onClick={() => setActiveDay(day)}
+            className={`px-6 py-2 rounded font-semibold transition-all ${
+              activeDay === day
+                ? 'bg-gradient-to-r from-green-400 to-teal-400 text-black'
+                : 'border border-gray-600'
             }`}
           >
-            {title || 'TBA'}
-          </div>
+            {agendaData[day].label} {agendaData[day].date}
+          </button>
         ))}
       </div>
 
-      {/* Call to Action */}
-      <div className="flex justify-center">
-        <Link href="/register?t=delegate">
+      {/* Render Non-session Items */}
+      {(grouped.__misc || []).map((item: any, idx: number) => (
+        <div key={idx} className={
+          "bg-white text-black p-4 rounded mb-4"}>
+          <div className="text-sm text-gray-600 mb-1">Schedule {item.time}</div>
+          <div className={`inline-block text-xs px-2 py-1 rounded ${getBadgeColor(item.type)}`}>
+            {item.type}
+          </div>
+          <h4 className="mt-1 font-semibold text-lg">{item.title}</h4>
+        </div>
+      ))}
+
+      {/* Render Session Groups */}
+      {Object.entries(grouped).filter(([key]) => key !== '__misc').map(([session, items]: any, idx) => (
+        <div key={idx} className="mb-10">
+          <div className="bg-gradient-to-br from-green-400 to-teal-400 text-black p-4 rounded font-semibold mb-4">
+            {session}
+            <p className="text-sm font-normal">Session details or abstract could go here (if available in the data).</p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {items.map((item: any, i: number) => (
+              <div key={i} className="bg-white text-black p-4 rounded shadow">
+                <div className="text-sm text-gray-500 mb-1">Schedule {item.time}</div>
+                <div className={`inline-block text-xs font-semibold px-2 py-1 rounded mb-2 ${getBadgeColor(item.type)}`}>
+                  {item.type}
+                </div>
+                <h4 className="font-semibold text-lg">{item.title}</h4>
+                {item.speaker && (
+                  <div className="mt-2 text-sm text-gray-700">
+                    <div className="font-semibold">{item.speaker.name}</div>
+                    <div>{item.speaker.role}</div>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+
+      {/* CTA */}
+      <div className="flex justify-center mt-12">
+        <a href="/register?t=delegate">
           <button className="px-6 py-3 border border-white text-white hover:bg-white hover:text-black transition rounded">
             Get Delegate Pass
           </button>
-        </Link>
+        </a>
       </div>
     </div>
   )
